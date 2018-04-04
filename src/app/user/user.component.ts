@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
   name = '';
+  isHighlight = true;
+  evenStyle = { color: 'black', fontSize: '20px'};
+  oddStyle = { color: 'red', fontSize: '40px'};
+  currentClass = { circle : !this.isHighlight, square: this.isHighlight };
 
   constructor() { }
 
