@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { IpService } from './ip.service'
 
 
 import { AppComponent } from './app.component';
@@ -13,6 +15,13 @@ import { PersonComponent } from './person/person.component';
 import { ListPersonComponent } from './list-person/list-person.component';
 import { ParentComponent } from "./parent.component";
 import { ChildComponent } from "./child.component";
+import { CardComponent } from  './card.component';
+import { LearnPipeComponent } from './learn-pipe/learn-pipe.component'
+import { RoundPipe } from './round.pipe'
+import { IpComponent } from './ip.component';
+import { WeatherComponent } from './weather/weather.component'
+import { SignInComponent } from './sign-in.component'
+import { SignUpComponent } from './sign-up.component'
 
 @NgModule({
   declarations: [
@@ -25,13 +34,22 @@ import { ChildComponent } from "./child.component";
     PersonComponent,
     ListPersonComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    CardComponent,
+    LearnPipeComponent,
+    RoundPipe,
+    IpComponent,
+    WeatherComponent,
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [IpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
